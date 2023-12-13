@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HarmonyLib;
 using BepInEx;
-using PotionCraft.ObjectBased.Haggle;
+using HarmonyLib;
 using UnityEngine;
+using PotionCraft.ObjectBased.Haggle;
 
 namespace xiaoye97
 {
-    [BepInPlugin("me.xiaoye97.plugin.PotionCraft.AutoHaggle", "AutoHaggle", "1.0.0")]
+    [BepInPlugin("me.xiaoye97.plugin.PotionCraft.AutoHaggle", "AutoHaggle", "1.1.0")]
     public class AutoHaggle : BaseUnityPlugin
     {
-        private void Start()
+        private void Awake()
         {
             Harmony.CreateAndPatchAll(typeof(AutoHaggle));
         }
@@ -31,11 +27,11 @@ namespace xiaoye97
             foreach (var b in HaggleWindow.Instance.currentBonuses)
             {
                 // 跳过左右两把的绿的
-                if (b.bonusComponent.position < 0.1f || b.bonusComponent.position > 0.9f)
+                if (b.haggleBonus.Position < 0.1f || b.haggleBonus.Position > 0.9f)
                 {
                     continue;
                 }
-                if (Mathf.Abs(b.bonusComponent.Position - __instance.Position) <= b.size / 2f)
+                if (Mathf.Abs(b.haggleBonus.Position - __instance.Position) <= b.size / 2f)
                 {
                     needHaggle = true;
                     break;
