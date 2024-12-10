@@ -1,6 +1,6 @@
 # PotionCraft_AutoHaggle
 
-This mod is Compatible with Potion Craft v1.1!
+This mod is Compatible with Potion Craft v2.0!
 
 Auto haggle.
 
@@ -11,7 +11,7 @@ Auto haggle.
 
 # 药剂工艺 自动讨价还价
 
-此Mod适配药剂工艺v1.1版本！
+此Mod适配药剂工艺v2.0版本！
 
 功能: 自动讨价还价
 
